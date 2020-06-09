@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+  <title>Read Our Blog</title>
+</head>
+<body id="home">
+  <header class="hero blog">
+    <div id="navbar" class="navbar top">
+      <div class="logo-icon">
+        <h1 class="logo">
+          <i class="fas fa-book-open">
+            <span class="text-primary">Edge</span>
+            Ledger
+          </i>
+        </h1>
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav class="nav show">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#cases">Cases</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="content">
+      <h1>Blog</h1>
+    </div>
+  </header>
+
+  <main>
+    <article id="" class="flex-columns">
+      <div class="row">
+        <div class="column">
+          <div class="column-1">
+            <img src="./assets/images/blog/blog1.jpg" alt="">
+          </div>
+        </div>
+        <div class="column">
+          <div class="column-2 bg-light">
+            <h2>Blog Post One</h2>
+            <p class="meta">
+              <i class="fas fa-user"></i>
+              Posted By <strong>Riou Genkaku</strong> | April 20, 2020
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est nulla, deleniti fugit aut excepturi reprehenderit suscipit itaque dignissimos ipsum eos mollitia commodi repellendus sed iusto asperiores sapiente labore vero.</p>
+            <a href="post.html" class="btn btn-dark">
+              <i class="fas fa-chevron"></i>
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article id="" class="flex-columns flex-reverse">
+      <div class="row">
+        <div class="column">
+          <div class="column-1">
+            <img src="./assets/images/blog/blog2.jpg" alt="">
+          </div>
+        </div>
+        <div class="column">
+          <div class="column-2 bg-dark">
+            <h2>Blog Post Two</h2>
+            <p class="meta">
+              <i class="fas fa-user"></i>
+              Posted By <strong>Jowy Atreides</strong> | April 20, 2020
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est nulla, deleniti fugit aut excepturi reprehenderit suscipit itaque dignissimos ipsum eos mollitia commodi repellendus sed iusto asperiores sapiente labore vero.</p>
+            <a href="post.html" class="btn btn-light">
+              <i class="fas fa-chevron"></i>
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article id="" class="flex-columns">
+      <div class="row">
+        <div class="column">
+          <div class="column-1">
+            <img src="./assets/images/blog/blog3.jpg" alt="">
+          </div>
+        </div>
+        <div class="column">
+          <div class="column-2 bg-light">
+            <h2>Blog Post Three</h2>
+            <p class="meta">
+              <i class="fas fa-user"></i>
+              Posted By <strong>Nanami Genkaku</strong> | April 20, 2020
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est nulla, deleniti fugit aut excepturi reprehenderit suscipit itaque dignissimos ipsum eos mollitia commodi repellendus sed iusto asperiores sapiente labore vero.</p>
+            <a href="post.html" class="btn btn-dark">
+              <i class="fas fa-chevron"></i>
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer bg-dark">
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
+    <p>Copyright &copy; 2020 - EdgeLedger</p>
+  </footer>
+
+  <script>
+    let scroll = false;
+    const menuBar = document.querySelector('.fa-bars');
+    const nav = document.querySelector('.nav');
+    const navbar = document.querySelector('.navbar');
+    const header = document.querySelector('.hero');
+    const div = document.createElement('div');
+
+    window.onscroll = function (event) {
+      if (window.pageYOffset > 100) {
+        navbar.classList.remove('top');
+        if (!scroll) navbar.style.transform = 'translateY(-70px)';
+        setTimeout(function () {
+          navbar.style.transform = 'translateY(0px)';
+          scroll = true;
+        }, 200);
+      } else {
+        navbar.classList.add('top');
+        scroll = false;
+      }
+    }
+
+    function showHideMenu () {
+      if (nav.classList.contains('hide')) {
+        header.appendChild(div);
+        div.classList.add('wrap-all');
+        nav.classList.add('show');
+        nav.classList.remove('hide');
+      } else {
+        nav.classList.add('hide');
+        div.classList.remove('wrap-all');
+        nav.classList.remove('show');
+      }
+    }
+
+    div.addEventListener('click', function (event) {
+      showHideMenu();
+    });
+
+    menuBar.addEventListener('click', function (event) {
+    showHideMenu();
+  });
+  </script>
+</body>
+</html>
